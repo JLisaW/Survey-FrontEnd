@@ -162,24 +162,6 @@ const editQuestion = (questionId, data) => {
   })
 }
 
-const addQuestion = (surveyId, data) => {
-  console.log('add question function this is surveyId', surveyId)
-  console.log('add question function this is data', data)
-  return $.ajax({
-    url: config.apiOrigin + '/questions/' + surveyId,
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-    // {
-    //   'question': {
-    //     'prompt': data.prompt,
-    //     '_survey': store.surveyId
-    //   }
-    // }
-  })
-}
 
 const showUserSurveyTaken = (surveyId, data) => {
   console.log('show user question function fired this is surveyId', surveyId)
@@ -190,23 +172,6 @@ const showUserSurveyTaken = (surveyId, data) => {
       Authorization: 'Token token=' + store.user.token
     },
     data: data
-  })
-}
-
-const editQuestion = (questionId, data) => {
-  console.log('api.js edit one question function fired this is questionId', questionId)
-  console.log('edit question data', data)
-  return $.ajax({
-    url: config.apiOrigin + '/edit-questions/' + questionId,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: {
-      'question': {
-        'prompt': data
-      }
-    }
   })
 }
 
@@ -225,22 +190,6 @@ const addQuestion = (surveyId, data) => {
       }
     }
   })
-  // console.log('add question function this is surveyId', surveyId)
-  // console.log('add question function this is data', data)
-  // return $.ajax({
-  //   url: config.apiOrigin + '/add-questions/' + surveyId,
-  //   method: 'POST',
-  //   headers: {
-  //     Authorization: 'Token token=' + store.user.token
-  //   },
-  //   data
-    // {
-    //   'question': {
-    //     'prompt': data.prompt,
-    //     '_survey': store.surveyId
-    //   }
-    // }
-  // })
 }
 
 const showUserSurveyTaken = (surveyId, data) => {
